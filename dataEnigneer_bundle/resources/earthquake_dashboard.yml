@@ -1,0 +1,6 @@
+resources:
+  dashboards:
+    Youtube_EarthQuake_Dash:
+      display_name: 'Youtube_EarthQuake_Dash'
+      file_path: ../src/Dashboard Of Earthquake/Youtube_EarthQuake_Dash.lvdash.json
+      warehouse_id: ${var.warehouse_id}

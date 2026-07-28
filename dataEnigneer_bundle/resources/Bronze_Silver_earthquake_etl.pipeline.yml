@@ -1,0 +1,19 @@
+# The main pipeline for dataEnigneer_bundle
+
+resources:
+  pipelines:
+    Bronze_Silver_earthquake_etl:
+      name: Bronze_to_Silver
+      configuration:
+        catalog_name: ${var.catalog}  #${var.catalog}--> Environment Flexibility: It allows you to use the exact same code configuration for different stages like development (dev_catalog) and production (prod_catalog
+      libraries:
+        - glob:
+            include: /Workspace/Dataengieer_Yt_project/Dataengieer_Yt_project/dataEnigneer_bundle/src/DLT_Pipelines/Bronze_Silver/transformations/**
+      schema: silver
+      continuous: false
+      development: false
+      photon: true
+      channel: CURRENT
+      catalog: ${var.catalog}
+      serverless: true
+      root_path: /Workspace/Dataengieer_Yt_project/Dataengieer_Yt_project/dataEnigneer_bundle/src/DLT_Pipelines/Bronze_Silver

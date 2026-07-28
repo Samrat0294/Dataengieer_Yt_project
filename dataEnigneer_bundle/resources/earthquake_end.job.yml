@@ -1,0 +1,26 @@
+resources:
+  jobs:
+    youtube_earthquake_job_pipeline:
+      name: youtube_earthquake_job_pipeline
+      tasks:
+        - task_key: Ingestion_to_bronze
+          notebook_task:
+            notebook_path: /Workspace/Dataengieer_Yt_project/Dataengieer_Yt_project/dataEnigneer_bundle/src/notebooks/Ingestion_to_bronze
+            base_parameters:
+              catalog_name: ${var.catalog}
+            source: WORKSPACE
+        - task_key: Bronze_to_Silver_Earthquake
+          depends_on:
+            - task_key: Ingestion_to_bronze
+          pipeline_task:
+            pipeline_id: ${resources.pipelines.Bronze_Silver_earthquake_etl.id}   #b18a760d-eaca-403e-8fb6-a0c6e3ffa4fc
+        - task_key: Earthquake_Dashboard
+          depends_on:
+            - task_key: Bronze_to_Silver_Earthquake
+          dashboard_task:
+            subscription: {}
+            warehouse_id: 08b05d2106b13340
+            dashboard_id: ${resources.dashboards.Youtube_EarthQuake_Dash.id} #01f18a4e1509151cadb5fffe85427de7
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
