@@ -1,4 +1,13 @@
 # Real-Time Earthquake Data Engineering Pipeline using Databricks
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
+![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apachespark&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Delta Lake](https://img.shields.io/badge/Delta_Lake-00ADD8?style=for-the-badge&logo=databricks&logoColor=white)
+![Unity Catalog](https://img.shields.io/badge/Unity_Catalog-FF3621?style=for-the-badge)
+![Power BI](https://img.shields.io/badge/Power_BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+
 ## Project Overview
 This project demonstrates an end-to-end Data Engineering pipeline built on Databricks to ingest, process, and analyze real-time earthquake data from the USGS Earthquake API.
 The pipeline follows modern Data Engineering practices by implementing data ingestion, streaming transformations, Change Data Capture (CDC), and a Medallion Architecture (Bronze and Silver layers). The processed data is then used to create an interactive Power BI dashboard for earthquake analysis.
